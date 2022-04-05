@@ -23,59 +23,65 @@ End the program and close the output image windows.
 ### Register Number: 
 i) #To Read,display the image
 ```
-  import cv2
-
+import cv2
+img=cv2.imread('keanu.jpeg',1)
+cv2.imshow('JOHN WICK',color_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 ```
 ii) #To write the image
 ```
-
-
-
+import cv2
+img=cv2.imread('keanu.jpeg',1)
+cv2.imwrite('Boogie man.jpeg',img)
+img2=cv2.imread('Boogie man.jpeg')
+cv2.imshow('Boogie man.jpeg',img2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 ```
 iii) #Find the shape of the Image
-```python3
-
-
-
+```
+print(img.shape)
 ```
 iv) #To access rows and columns
 
-```python3
+```
+import random
+for i in range(100):
+    for j in range(img.shape[1]):
+        img[i][j]=[random.randint(0,255),random.randint(0,255),random.randint(0,255)]
 
-
-
+cv2.imshow("Baba Yaga",img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 ```
 v) #To cut and paste portion of image
-```python3
-
-
-
+```
+import cv2
+img=cv2.imread('keanu.jpeg',-1)
+tag=img[200:300,200:300]
+img[100:200,100:200]=tag
+cv2.imshow('Baba Yaga',img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 ```
 
 ## Output:
 
 ### i) Read and display the image
-
-<br>
-<br>
+![output](./out1.png)
 
 ### ii)Write the image
-
-<br>
-<br>
+![output](./out2.png)
 
 ### iii)Shape of the Image
-
-<br>
-<br>
+![output](./out3.png)
 
 ### iv)Access rows and columns
-<br>
-<br>
+![output](./out4.png)
 
 ### v)Cut and paste portion of image
-<br>
-<br>
+![output](./out5.png)
 
 ## Result:
 Thus the images are read, displayed, and written successfully using the python program.
